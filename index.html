@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <div class="write">
+      <div class="topmargin"></div>
+      <textarea name="wordd" rows="20" cols="100" autofocus></textarea>
+    </div>
+    <div class="info">
+      <p class="lcount">Letter Count: <span></span></p>
+      <p class="wcount">Word Count: <span></span></p>
+      <p class="pcount">Paragraph Count: <span></span></p>
+      <p class="ccount">Character Count: <span></span></p>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+
+        $('textarea').on('change keyup paste',function(event) {
+        var llength = $('textarea').val().length;
+        var wlength = $.trim($('textarea').val()).split(' ').length;
+        console.log($.trim($('textarea').val()));
+        $('.lcount span').html(llength);
+        $('.wcount span').html(wlength);
+      });
+
+    </script>
+  </body>
+</html>
